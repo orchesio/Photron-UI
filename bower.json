@@ -1,0 +1,21 @@
+{
+  "name": "photron-ui",
+  "description": "UI Interface for Photron",
+  "main": "index.js",
+  "authors": [
+    "Sunny Cheung"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/orchesio/Photron-UI",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.1.0"
+  }
+}
