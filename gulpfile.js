@@ -40,9 +40,12 @@ gulp.task('scss', function(done) {
 
 gulp.task('scripts', function(done) {
 
-    gulp.src(['./src/js/*.js', './src/js/**/*.js'])
-        .pipe(webpack())
-        .pipe(rename('app.js'))
+    gulp.src('./src/js/index.js')
+        .pipe(webpack(require('./webpack.config.js') ))
+        .on('error', function(err) {
+            console.log(err);
+            this.emit('end');
+        })
         .pipe(gulp.dest('./app/js'))
         .on('end', done);
 
