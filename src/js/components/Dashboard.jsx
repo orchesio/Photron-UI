@@ -4,6 +4,7 @@ const Dashboard = React.createClass({
   render: function() {
     return (
       <div className="dashboard">
+        Dashboard
       </div>
     );
   }

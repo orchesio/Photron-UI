@@ -3,15 +3,26 @@ import React from 'react';
 import { Link } from 'react-router';
 
 let menuItems = [ {
-    path: '/nodes',
-    name: 'Nodes'
+    path: '/',
+    name: 'Dashboard'
+},{
+    path: '/services',
+    name: 'Services'
 }, {
-    path: '/clusters',
-    name: 'Clusters'
+    path: '/accounts',
+    name: 'Account'
 }, {
-    path: '/workspaces',
-    name: 'WorkSpaces'
-}]
+    path: '/infrastructure',
+    name: 'Infrastructure'
+}, {
+    path: '/monitor',
+    name: 'Monitor'
+}, {
+    path: '/settings',
+    name: 'Settings'
+}
+
+]
 
 const Sidebar = React.createClass({
     render() {
