@@ -1,4 +1,5 @@
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function getEntrySources(sources) {
     if (process.env.NODE_ENV !== 'production') {
@@ -29,9 +30,14 @@ module.exports = {
             },
             {
                 test: /.scss?$/,
-                loader: ['style', 'css', 'sass']
+                loader: ExtractTextPlugin.extract('css!sass')
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('../css/photron-ui.css', {
+            allChunks: true
+        })
+    ]
 
 }

@@ -4,6 +4,8 @@ import Cluster from './Cluster.jsx'
 import { fetchClusters } from '../actions/ClusterActions.jsx'
 import { Link } from 'react-router'
 
+require ('../../scss/ListCluster.scss')
+
 const mapStateToProps = ({clusters}) => ({
     clusters
 })
@@ -20,10 +22,11 @@ const ListCluster = React.createClass({
     },
 
     render() {
-        return  (<div class="list-cluster">
-            <Link to='/infrastructure/cluster/new'>Create New Cluster</Link>
+        return  (<div className="list-cluster">
+            <Link className='btn' to='/infrastructure/cluster/new'>Create New Cluster</Link>
             <div className='list'>
-            {this.props.clusters.map(cluster => <Cluster cluster={cluster} key={cluster.id} />)}
+            {this.props.clusters.map(cluster =>   <Link to={`/infrastructure/cluster/view/${cluster.id}`} key={cluster.id}>
+                <Cluster cluster={cluster} key={cluster.id} /> </Link>)}
             </div>
         </div>)
     }

@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router'
+
+require('../../scss/Sidebar.scss')
 
 let menuItems = [ {
     path: '/',
@@ -28,14 +30,14 @@ const Sidebar = React.createClass({
     render() {
         let props = this.props;
 
-        return (<aside className="primary-aside">
+        return (<div className="sidebar">
           <ul>
            { 
               menuItems.map((item, i) => 
                 <li key={i}><Link to={item.path} activeClassName="active">{item.name}</Link></li>
             )}
           </ul>
-        </aside>)
+        </div>)
     }
 })
 export default Sidebar
